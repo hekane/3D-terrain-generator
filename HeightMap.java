@@ -7,6 +7,7 @@ public class HeightMap {
 
     private ArrayList<Coordinates> coordinates;
     private ArrayList<Polygon> polygons;
+    private ArrayList<Double> pixels;
     private int width;
     private int height;
 
@@ -16,11 +17,12 @@ public class HeightMap {
      * @param width of the heightmap
      * @param height of the heightmap
      */
-    public HeightMap(int width, int height) {
+    public HeightMap(int width, int height, ArrayList<Double> pixels) {
         this.coordinates = new ArrayList<>();
         this.polygons=new ArrayList<>();
         this.width=width;
         this.height=height;
+        this.pixels=pixels;
         generateCoordinates();
         generatePolygons();
     }
@@ -50,6 +52,7 @@ public class HeightMap {
         for(int i=0;i<width;i++){
             for(int j =0;j<height;j++){
                 Coordinates coordinates=new Coordinates(i,j);
+                coordinates.setZ(pixels.get(i*width+j)*20);
                 this.coordinates.add(coordinates);
             }
         }
@@ -65,7 +68,7 @@ public class HeightMap {
         for(int i=1;i<=this.coordinates.size();i++){
             if(i%width!=0){
                 if(!(i>width*height-width)){
-                    System.out.println("Adding: "+i+" "+(i+1)+" "+(i+width)+" "+(i+width+1));
+                    //System.out.println("Adding: "+i+" "+(i+1)+" "+(i+width)+" "+(i+width+1));
                     Polygon polygon=new Polygon(i,i+1,i+width+1,i+width);
                     this.polygons.add(polygon);
                 }

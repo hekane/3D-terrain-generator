@@ -1,8 +1,14 @@
 public class Main {
     public static void main(String[] args) {
 
-        HeightMap heightMap=new HeightMap(100,100);
-        heightMap.writeObj();
+        ImageHandler imageHandler=new ImageHandler();
+        imageHandler.loadImage();
+        System.out.println(imageHandler.getHeight());;
+        if(imageHandler.getHeight()!=0){
+            HeightMap heightMap=new HeightMap(imageHandler.getWidth(),imageHandler.getHeight(), imageHandler.getPixelData());
+            heightMap.writeObj();
+        }
+
 
     }
 }

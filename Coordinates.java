@@ -31,8 +31,11 @@ public class Coordinates {
         }
         return height/5;
     }
+    public void setZ(double z){
+        this.z=z;
+    }
     @Override
     public String toString(){
-        return "v "+x+" "+String.valueOf(z).substring(0,5)+" "+y+"\n";
+        return "v "+x+" "+z+" "+y+"\n";
     }
 }
