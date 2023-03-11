@@ -68,7 +68,6 @@ public class HeightMap {
         for(int i=1;i<=this.coordinates.size();i++){
             if(i%width!=0){
                 if(!(i>width*height-width)){
-                    //System.out.println("Adding: "+i+" "+(i+1)+" "+(i+width)+" "+(i+width+1));
                     Polygon polygon=new Polygon(i,i+1,i+width+1,i+width);
                     this.polygons.add(polygon);
                 }
