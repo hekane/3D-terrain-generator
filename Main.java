@@ -8,7 +8,5 @@ public class Main {
             HeightMap heightMap=new HeightMap(imageHandler.getWidth(),imageHandler.getHeight(), imageHandler.getPixelData());
             heightMap.writeObj();
         }
-
-
     }
 }
