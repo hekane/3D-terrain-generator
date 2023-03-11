@@ -19,7 +19,7 @@ public class ImageHandler {
 
     public void loadImage(){
         try{
-            File pixels=new File("F:\\Java Repos\\IntelliJ projects\\mun3d\\src\\pixels.png");
+            File pixels=new File("pixels.png");
             image= ImageIO.read(pixels);
             this.width=image.getWidth();
             this.height=image.getHeight();
