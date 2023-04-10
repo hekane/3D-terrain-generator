@@ -31,9 +31,16 @@ public class Coordinates {
         }
         return height/5;
     }
+
+    /**
+     * Method replaces the randomized z-value or the coordinates
+     * with a user defined z-value
+     * @param z: the value to be modified
+     */
     public void setZ(double z){
         this.z=z;
     }
+
     @Override
     public String toString(){
         return "v "+x+" "+z+" "+y+"\n";
